@@ -15,28 +15,35 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/produtos', {
             templateUrl: '/view/produtos.html',
+            controller: 'ProdutoCtrl',
             authorize: true
         })
         .when('/produtos/adicionar', {
             templateUrl: '/view/cadastrarProduto.html',
+            controller: 'ProdutoCtrl',
             authorize: true
         })
         .when('/produtos/editar/:id', {
             templateUrl: '/view/editarProduto.html',
+            controller: 'ProdutoCtrl',
             authorize: true
         })
         .when('/produtos/consultar/:id', {
             templateUrl: '/view/produto.html',
+            controller: 'ProdutoCtrl',
             authorize: true
         })
         .when('/usuarios/cadastrar', {
-            templateUrl: '/view/cadastrarUsuario.html'
+            templateUrl: '/view/cadastrarUsuario.html',
+            controller: 'UsuarioCtrl'
         })
         .when('/usuarios/login', {
-            templateUrl: '/view/login.html'
+            templateUrl: '/view/login.html',
+            controller: 'UsuarioCtrl'
         })
         .when('/usuarios/refresh', {
-            templateUrl: '/view/refresh.html'
+            templateUrl: '/view/refresh.html',
+            controller: 'UsuarioCtrl'
         })
         .otherwise({
             redirectTo: '/produtos'
