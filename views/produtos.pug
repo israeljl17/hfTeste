@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    section(ng-controller='produtoCtrl')
+        h3 Consultar Produtos
+        .row
+            table.bordered
+                thead
+                    tr
+                        th Nome
+                        th Preco
+                        th Quantidade
+                        th
+                tbody(ng-init='consultarTodos()')
+                    tr(dir-paginate="p in produtos | itemsPerPage:5", pagination-id='prodx')
+                        td {{ p.nome }}
+                        td {{ p.preco }}
+                        td {{ p.quantidade }}
+                        td
+                            a.waves-effect.waves-light.btn.grey.darken-3(href='/produtos/consultar/{{ p._id }}') Visualizar
+
+        .row
+            dir-pagination-controls.fixedPagination.center.bold(pagination-id='prodx', boundary-links='true', on-page-change='pageChangeHandler(newPageNumber)', template-url='dir_pagination.tpl.html')

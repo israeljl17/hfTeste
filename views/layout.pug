@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title HF Teste
+
+        link(rel='stylesheet', href='/lib/materialize/css/materialize.min.css')
+
+        link(href='/lib/materialize/css/icon.css', rel='stylesheet')
+    body.grey.lighten-3(ng-app='hfTesteApp')
+        nav.teal.darken-4
+            .nav-wrapper.container
+                a.brand-logo.bold(href='/produtos') HF Teste
+                ul#nav-mobile.right.hide-on-med-and-down
+                    li
+                        a(href='/produtos/adicionar') Adicionar
+                    li
+                        a(href='/usuario/cadastrar') Cadastrar-se
+                    li
+                        a(href='/usuario/login') Login
+        .container
+            block content
+
+        script(src='/lib/jquery/jquery.js')
+        script(src='/lib/materialize/js/materialize.min.js')
+        script(src='/lib/angular/angular.js')
+        script(src='/lib/angular/angular-route.js')
+        script(src='/lib/angular/dirPagination.js')
+        script(src='/js/resource/app.js')
+        script(src='/js/controller/produtoCtrl.js')
+        script(src='/js/controller/usuarioCtrl.js')

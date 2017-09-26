@@ -1,0 +1,25 @@
+{
+    "name": "hftest",
+    "version": "1.0.0",
+    "description": "Teste Prático - Back End",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app",
+        "test": "mocha --timeout 10000"
+    },
+    "author": "israeljl",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^1.0.3",
+        "body-parser": "^1.18.2",
+        "express": "^4.15.4",
+        "jsonwebtoken": "^8.0.1",
+        "mongoose": "^4.11.12",
+        "pug": "^2.0.0-rc.4"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "chai-http": "^3.0.0",
+        "mocha": "^3.5.3"
+    }
+}

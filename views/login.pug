@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    section(ng-controller='usuarioCtrl')
+        h3 Login
+        form#cadastrarUsuario.col.s12
+        .row
+            .input-field.col.s12
+                input#email.validate(type='email', ng-model='usuario.email')
+                label(for='email') Email
+        .row
+            .input-field.col.s12
+                input#senha.validate(type='password', ng-model='usuario.senha')
+                label(for='senha') Senha
+        .row
+            a.waves-effect.waves-light.btn.grey.darken-3(ng-click='login()') Login
