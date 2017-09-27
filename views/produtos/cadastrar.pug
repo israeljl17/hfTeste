@@ -1,0 +1,17 @@
+section
+    h3 Adicionar Produto
+    form#adicionarProduto.col.s12
+    .row
+        .input-field.col.s12
+            input#nome.validate(type='text', ng-model='produto.nome')
+            label(for='nome') Nome
+    .row
+        .input-field.col.s12
+            input#preco.validate(type='number', ng-model='produto.preco')
+            label(for='preco') Preco
+    .row
+        .input-field.col.s12
+            input#quantidade.validate(type='number', ng-model='produto.quantidade')
+            label(for='quantidade') Quantidade
+    .row
+        a.waves-effect.waves-light.btn.grey.darken-3(ng-click='adicionar()') Adicionar

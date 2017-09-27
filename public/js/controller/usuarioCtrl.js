@@ -1,5 +1,8 @@
 app.controller('UsuarioCtrl', function($scope, $http, $location, AuthService) {
 
+    $scope.logado = false;
+    console.log($scope.logado);
+
     AuthService.logout();
 
     $scope.cadastrar = function() {
@@ -27,8 +30,6 @@ app.controller('UsuarioCtrl', function($scope, $http, $location, AuthService) {
             } else {
                 AuthService.setToken(response.data.token);
                 AuthService.setUsuario(response.data.usuario);
-                console.log(response.data.token);
-                console.log(response.data.usuario);
                 $location.path('/produtos');
                 Materialize.toast("Bem-vindo " + response.data.usuario, 4000);
             }
@@ -44,8 +45,6 @@ app.controller('UsuarioCtrl', function($scope, $http, $location, AuthService) {
                 Materialize.toast(response.data.erroMsg, 4000);
             } else {
                 AuthService.setToken(response.data.token);
-                console.log(response.data.token);
-                console.log(response.data.usuario);
                 window.history.back();
                 Materialize.toast("Bem-vindo " + response.data.usuario, 4000);
             }

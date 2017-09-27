@@ -1,5 +1,8 @@
 app.controller('ProdutoCtrl', function($scope, $http, $routeParams, $location) {
 
+    $scope.logado = true;
+    console.log($scope.logado);
+
     $scope.consultarTodos = function() {
         $http.get('/api/produtos').then(function(response) {
             $scope.produtos = response.data;

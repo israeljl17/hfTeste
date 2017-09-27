@@ -3,46 +3,44 @@ var app = angular.module("hfTesteApp", ['angularUtils.directives.dirPagination',
 
 app.config(function($routeProvider, $locationProvider) {
 
-    /*
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
     });
-    */
 
-    $locationProvider.hashPrefix('');
+    //$locationProvider.hashPrefix('');
 
     $routeProvider
         .when('/produtos', {
-            templateUrl: '/view/produtos.html',
+            templateUrl: '/produtos',
             controller: 'ProdutoCtrl',
-            authorize: true
+            autorize: true
         })
         .when('/produtos/adicionar', {
-            templateUrl: '/view/cadastrarProduto.html',
+            templateUrl: '/produtos/cadastrar',
             controller: 'ProdutoCtrl',
-            authorize: true
+            autorize: true
         })
         .when('/produtos/editar/:id', {
-            templateUrl: '/view/editarProduto.html',
+            templateUrl: '/produtos/editar',
             controller: 'ProdutoCtrl',
-            authorize: true
+            autorize: true
         })
         .when('/produtos/consultar/:id', {
-            templateUrl: '/view/produto.html',
+            templateUrl: '/produtos/consultar',
             controller: 'ProdutoCtrl',
-            authorize: true
+            autorize: true
         })
         .when('/usuarios/cadastrar', {
-            templateUrl: '/view/cadastrarUsuario.html',
+            templateUrl: '/usuarios/cadastrar',
             controller: 'UsuarioCtrl'
         })
         .when('/usuarios/login', {
-            templateUrl: '/view/login.html',
+            templateUrl: '/usuarios/login',
             controller: 'UsuarioCtrl'
         })
         .when('/usuarios/refresh', {
-            templateUrl: '/view/refresh.html',
+            templateUrl: '/usuarios/refresh',
             controller: 'UsuarioCtrl'
         })
         .otherwise({

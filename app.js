@@ -28,11 +28,8 @@ db.on('error', function(err) {
     console.log(err);
 });
 
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'pug');
-app.set("view options", {
-    layout: false
-});
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -44,9 +41,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/produtos', produtos);
 app.use('/api/usuarios', usuarios);
 
-
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/public/view/index.html'));
+    res.render('index');
+});
+
+app.get('/:nome', function(req, res) {
+    var nome = req.params.nome;
+    res.render(nome);
+});
+
+app.get('/produtos/:acao', function(req, res) {
+    var acao = req.params.acao;
+    res.render('produtos/' + acao);
+});
+
+app.get('/usuarios/:acao', function(req, res) {
+    var acao = req.params.acao;
+    res.render('usuarios/' + acao);
 });
 
 app.use(function(req, res) {

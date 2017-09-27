@@ -1,0 +1,15 @@
+section(ng-init='consultar()')
+    h3 Consultar Produto
+    .row
+        .input-field.col.s12
+            h4 {{ produto.nome }}
+    .row
+        .input-field.col.s12
+            h4 {{ produto.preco }}
+    .row
+        .input-field.col.s12
+            h4 {{ produto.quantidade }}
+    .row
+        a.waves-effect.waves-light.btn.grey.darken-3(href='/produtos/editar/{{ produto._id }}') Editar
+    .row
+        a.waves-effect.waves-light.btn.grey.darken-3(ng-click='deletar()') Deletar

@@ -1,0 +1,29 @@
+extends layout
+
+block body
+    nav.teal.darken-4
+        .nav-wrapper.container
+            a.brand-logo.bold(href='/produtos') HF Teste
+            ul#nav-mobile.right
+                li(ng-show="logado")
+                    a(href='/produtos') Produtos
+                li(ng-show="logado")
+                    a(href='/produtos/adicionar') Adicionar
+                li
+                    a(href='/usuarios/cadastrar') Cadastrar-se
+                li
+                    a(href='/usuarios/login') Login
+    .container
+        ng-view
+
+    script(src='/lib/jquery/jquery.js')
+    script(src='/lib/materialize/js/materialize.min.js')
+    script(src='/lib/angular/angular.js')
+    script(src='/lib/angular/angular-route.js')
+    script(src='/lib/angular/ngStorage.min.js')
+    script(src='/lib/angular/dirPagination.js')
+    script(src='/js/resource/app.js')
+    script(src='/js/service/authService.js')
+    script(src='/js/service/authInterceptor.js')
+    script(src='/js/controller/produtoCtrl.js')
+    script(src='/js/controller/usuarioCtrl.js')
