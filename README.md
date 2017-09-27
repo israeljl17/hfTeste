@@ -1,4 +1,4 @@
-# Basic CRUD Application
+# Basic CRUD Application - MEAN and JWT Authentication
 
 This is a basic CRUD Application using MEAN and JWT Authentication.
 
@@ -6,12 +6,11 @@ This is a basic CRUD Application using MEAN and JWT Authentication.
 * Node.js
 * Express
 * MongoDB & Mongoose
-* AngularJS
-* Pagination with Angular directive dirPagination
-* Pug Templating
+* Pug Templating (subs: AngularJS to render views and controll requests with ajax)
+    i have some problems using Pug render and Angular :X
 * JWT Authentication
 * BCrypt Hashing
-* Tests using Mocha and Chai
+* Pagination with Angular directive dirPagination
 
 ### Installation
 
